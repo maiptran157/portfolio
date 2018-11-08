@@ -16,21 +16,21 @@ $output = [
 $message['name'] = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
 if(empty($message['name'])){
     $output['success'] = false;
-    $output['messages'][] = 'missing name key';
+    $output['messages'][] = 'Missing Name Field';
 };
 
 //Validate email field
 $message['email'] = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 if(empty($message['email'])){
     $output['success'] = false;
-    $output['messages'][] = 'invalid email key';
+    $output['messages'][] = 'Invalid Email';
 };
 
 //Sanitize message
 $message['message'] = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
 if(empty($message['message'])){
     $output['success'] = false;
-    $output['messages'][] = 'missing message key';
+    $output['messages'][] = 'Missing Message Field';
 };
 
 // Sanitixe subject
@@ -56,7 +56,7 @@ if($output['success'] !== null) {
 //Set up email object
 // $mail = new PHPMailer;
 $mail = new PHPMailer\PHPMailer\PHPMailer;
-$mail->SMTPDebug = 3;           // Enable verbose debug output. Change to 0 to disable debugging output.
+$mail->SMTPDebug = 0;           // Enable verbose debug output. Change to 0 to disable debugging output.
 $mail->isSMTP();                // Set mailer to use SMTP.
 $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers.
 $mail->SMTPAuth = true;         // Enable SMTP authentication
@@ -88,12 +88,11 @@ $mail->addReplyTo($message['email'], $message['name']);                         
 //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
 //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
-// $mail->Subject = 'Here is the subject';
 // $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
 // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-$message['subject'] = $message['name']."has sent you a message on your porfolio";
-
+$message['subject'] = $message['name']." has sent you a message on your porfolio";
+$mail->Subject = $message['subject'];
 //HTML email
 $message['message'] = nl2br($message['message']);
 $mail->Body    = $message['message'];
@@ -102,14 +101,39 @@ $mail->AltBody = htmlentities($message['message']);
 $mail->isHTML(false);
 $mail->Body = $message['message'];
 
-
-
 //Attempt email send, ouput result to client
 if(!$mail->send()) {
     $output['success'] = false;
-    $ouput['messages'][] = $mail->ErrorInfo;
+    // $output['messages'][] = $mail->ErrorInfo;
+    $output['messages'] = 'Error Ending Message. Please Try Again.';
+
 } else {
-    $ouput['success'] = true;
+    $output['success'] = true;
+    $output['messages'] = 'Message Sent!';
+    $mail2 = new PHPMailer\PHPMailer\PHPMailer;
+    $mail2->SMTPDebug = 0;           // Enable verbose debug output. Change to 0 to disable debugging output.
+    $mail2->isSMTP();                // Set mailer to use SMTP.
+    $mail2->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers.
+    $mail2->SMTPAuth = true;         // Enable SMTP authentication
+    $mail2->Username = EMAIL_USER;   // SMTP username
+    $mail2->Password = EMAIL_PASS;   // SMTP password
+    $mail2->SMTPSecure = 'tls';      // Enable TLS encryption, `ssl` also accepted, but TLS is a newer more-secure encryption
+    $mail2->Port = 587;              // TCP port to connect to
+    $options = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+    );
+    $mail2->smtpConnect($options);
+    // $mail2 = new PHPMailer();
+    $mail2->setFrom(EMAIL_TO_ADDRESS, EMAIL_USERNAME);
+    $mail2->addAddress($message['email']);
+    $mail2->Subject = 'Mia Tran - Thank you for contacting me';
+    $mail2->Body = 'Thank you for contacting me. I will get back to you soon.';
+    $mail2->isHTML(false);
+    $mail2->send();
 }
 echo json_encode($output);
 ?>
