@@ -489,7 +489,7 @@ hr.black{
 
 .big-icon{
     display: block;
-    width: 90px;
+    width: 300px;
     height: 90px;
     margin: 0 auto 20px;
     border: 3px solid #fff;
@@ -542,6 +542,19 @@ hr.black{
     -o-transform: scale(0.99);
     -ms-transform: scale(0.99);
     transform: scale(0.99);
+}
+
+.icon-text-des{
+    color: black;
+    font-size: 2vh;
+}
+
+.big-icon a {
+    text-decoration: none;
+}
+
+.big-icon a i {
+    font-size: 2.5vh;
 }
 
 .wide-heading{
@@ -804,6 +817,10 @@ a.btn-mod:focus{
 }
 .btn-full{
     width: 100%;
+}
+.btn-mod.btn-w:hover{
+    background: rgb(50, 50, 50);
+    color: white;
 }
 
 
@@ -2372,7 +2389,7 @@ a.logo:hover{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     
-    padding: 140px 0;
+    /* padding: 140px 0; */
 }
 .small-section{
     padding: 70px 0;
@@ -6452,4 +6469,8 @@ section:hover .small-item-carousel .owl-next{
     .multi-columns-row .col-lg-3:nth-child(4n + 5) { clear: left; }
     .multi-columns-row .col-lg-2:nth-child(6n + 7) { clear: left; }
     .multi-columns-row .col-lg-1:nth-child(12n + 13) { clear: left; }
+}
+
+.testimonial-section{
+    padding: 55px 0;
 }

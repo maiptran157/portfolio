@@ -127,12 +127,23 @@ if(!$mail->send()) {
         )
     );
     $mail2->smtpConnect($options);
-    // $mail2 = new PHPMailer();
-    $mail2->setFrom(EMAIL_TO_ADDRESS, EMAIL_USERNAME);
-    $mail2->addAddress($message['email']);
+    $mail2->AddReplyTo(EMAIL_TO_ADDRESS, EMAIL_USERNAME); 
+    $mail2->From = EMAIL_TO_ADDRESS;  // sender's email address (shows in "From" field)
+    $mail2->FromName = EMAIL_USERNAME;   // sender's name (shows in "From" field)
+    $mail2->AddAddress($message['email']);
     $mail2->Subject = 'Mia Tran - Thank you for contacting me';
     $mail2->Body = 'Thank you for contacting me. I will get back to you soon.';
-    $mail2->isHTML(false);
+    // $mail2->Body = '<html>
+    // <head>
+    // <title>Thank you for contacting me</title>
+    // </head>
+    // <body>
+    // <p>Thank you for contacting me. I will get back to you soon.</p>
+    // <p>Sincerely,</p>
+    // <p>Mia Tran</p>
+    // </body>
+    // </html>';
+    // $mail2->isHTML(false);
     $mail2->send();
 }
 echo json_encode($output);
