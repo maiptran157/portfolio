@@ -491,13 +491,22 @@ Primary use:    MultiPurpose Template
     }
     
     .big-icon{
-        width: 60px;
+        width: 228px;
         height: 60px;
         line-height: 56px;
         font-size: 24px;
         margin-bottom: 0;
     }
     
+    .icon-text-des{
+        color: black;
+        font-size: 1.5vh;
+    }
+
+    .big-icon a i {
+        font-size: 2.5vh;
+    }
+
     .blog-slide-info{
         padding: 10px;
     }
