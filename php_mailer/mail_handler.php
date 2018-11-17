@@ -133,17 +133,7 @@ if(!$mail->send()) {
     $mail2->AddAddress($message['email']);
     $mail2->Subject = 'Mia Tran - Thank you for contacting me';
     $mail2->Body = 'Thank you for contacting me. I will get back to you soon.';
-    // $mail2->Body = '<html>
-    // <head>
-    // <title>Thank you for contacting me</title>
-    // </head>
-    // <body>
-    // <p>Thank you for contacting me. I will get back to you soon.</p>
-    // <p>Sincerely,</p>
-    // <p>Mia Tran</p>
-    // </body>
-    // </html>';
-    // $mail2->isHTML(false);
+    $mail2->isHTML(false);
     $mail2->send();
 }
 echo json_encode($output);

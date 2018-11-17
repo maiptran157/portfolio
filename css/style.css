@@ -2389,7 +2389,7 @@ a.logo:hover{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     
-    /* padding: 140px 0; */
+    padding: 60px 0;
 }
 .small-section{
     padding: 70px 0;
@@ -3034,14 +3034,16 @@ a.logo:hover{
     color: #aaa;
 }
 .team-social-links{
-    font-size: 40px;
+    font-size: 30px;
     cursor: pointer;
 }
 .team-social-links a{
+    font-size: .85em;
+    width: 10vw;
     display: inline-block;
     padding: 3px 7px;
     color: rgba(0,0,0, .4);
-    
+    text-decoration: none;
     -webkit-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);  
     -moz-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
     -o-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
@@ -3049,6 +3051,9 @@ a.logo:hover{
     transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
 }
 
+.team-social-links a i {
+    margin-right: 5%;
+}
 
 
 /* Hover state */
@@ -5639,7 +5644,17 @@ section:hover .small-item-carousel .owl-next{
     border-radius: 50%;
 }
 
+.flag-icon{
+    width: 5vw;
+}
 
+.tech-icons{
+    margin-bottom: 20%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-items: center;
+}
 /* ==============================
    Special demos
    ============================== */
