@@ -2389,7 +2389,8 @@ a.logo:hover{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     
-    padding: 60px 0;
+    padding-top: 60px;
+    padding-bottom: 30px;
 }
 .small-section{
     padding: 70px 0;
@@ -3034,13 +3035,12 @@ a.logo:hover{
     color: #aaa;
 }
 .team-social-links{
-    font-size: 30px;
+    text-align: center;
+    margin-top: 5%;
     cursor: pointer;
 }
 .team-social-links a{
-    font-size: .85em;
-    width: 10vw;
-    display: inline-block;
+    width: 5vw;
     padding: 3px 7px;
     color: rgba(0,0,0, .4);
     text-decoration: none;
@@ -3052,7 +3052,12 @@ a.logo:hover{
 }
 
 .team-social-links a i {
-    margin-right: 5%;
+    font-size: 3vh;
+    margin-right: 1%;
+}
+
+.team-social-links a span {
+    font-size: 2vh;
 }
 
 
@@ -5171,6 +5176,16 @@ section:hover .small-item-carousel .owl-next{
  * Tabs Alternative
  */
 
+ .tab-pane .section-text .row div {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+ }
+
+ .hobbies-nav .active{
+    border-bottom: 1px solid grey;
+ }
+
 .tpl-alt-tabs{
     font-size: 14px;
     font-weight: 400;
@@ -5186,7 +5201,6 @@ section:hover .small-item-carousel .owl-next{
     float: none;    
     padding: 0;    
     background: none !important;
-    
 }
 .tpl-alt-tabs > li > a{
     text-decoration: none;
