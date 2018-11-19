@@ -1064,8 +1064,12 @@
                                 <div class="ci-title font-alt">
                                     Call Me
                                 </div>
-                                <div class="ci-text">
-                                    +1 (714) 657 9708
+                                <div class="ci-text" id="phoneConfig">
+                                    <script>
+                                        var parts = ["+1 ", "714", " 657", " 9708", "(", ")"];
+                                        var phone = parts[0] + parts[4] + parts[1] + parts[5] + parts[2] + parts[3];
+                                        document.getElementById("phoneConfig").innerHTML = `<a href="tel::${phone}" target="_top">${phone}</a>`; 
+                                    </script>
                                 </div>
                             </div>
                         </div>
@@ -1096,8 +1100,12 @@
                                 <div class="ci-title font-alt">
                                     Email
                                 </div>
-                                <div class="ci-text">
-                                    <a href="mailto:maiptran157@gmail.com">maiptran157@gmail.com</a>
+                                <div class="ci-text" id="emailConfig">
+                                    <script>
+                                        var parts = ["maiptran157", "gmail", "com", "&#46;", "&#64;"];
+                                        var email = parts[0] + parts[4] + parts[1] + parts[3] + parts[2];
+                                        document.getElementById("emailConfig").innerHTML = `<a href="mailto:${email}" target="_top">${email}</a>`; 
+                                    </script>
                                 </div>
                             </div>
                         </div>
