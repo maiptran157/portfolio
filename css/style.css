@@ -998,6 +998,13 @@ a.btn-mod:focus{
     color: #fff;
 }
 
+.form div.loading {
+    margin-top: 20px;
+    padding: 13px 20px;
+    text-align: center;
+    color: gray;
+}
+
 .form-tip{
     font-size: 11px;
     color: #aaa;
