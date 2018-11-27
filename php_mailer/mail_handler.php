@@ -48,8 +48,8 @@ if(empty($message['message'])){
 // };
 
 if($output['success'] !== null) {
-    http_response_code(422); // 422 is unprocessible entity. 400 is bad request
     echo json_encode($output);
+    // http_response_code(422); // 422 is unprocessible entity. 400 is bad request
     exit();
 }
 

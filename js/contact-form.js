@@ -107,19 +107,20 @@ $(document).ready(function () {
 
             //Ajax post data to server
             $.post('/php_mailer/mail_handler.php', post_data, function (response) {
-                console.log("response:", response)
+                // console.log("response:", response)
                 //load json data from server and output message     
-                if (response.type == 'error') {
+                if (!response.success && response.messages[0]) {
+                    output = '<div class="error">' + response.messages[0] + '</div>';
+                } else if (!response.success) {
                     output = '<div class="error">' + response.messages + '</div>';
-                }
-                else {
-
+                } else {
+                    // output = '<div class="loading">' + 'Sending message...' + '</div>';
+                    // setTimeout(() => {
                     output = '<div class="success">' + response.messages + '</div>';
-
                     //reset values in all input fields
                     $('#contact_form input').val('');
                     $('#contact_form textarea').val('');
-
+                    // }, 1000)
                 }
 
                 $("#result").hide().html(output).slideDown();
