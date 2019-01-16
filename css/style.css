@@ -3048,7 +3048,8 @@ a.logo:hover{
 }
 .team-social-links a{
     width: 5vw;
-    padding: 3px 7px;
+    margin: 1%;
+    /* padding: 3px 4.5px; */
     color: rgba(0,0,0, .4);
     text-decoration: none;
     -webkit-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);  
@@ -3448,6 +3449,12 @@ a.logo:hover{
     text-transform: uppercase;
     color: #aaa;
     line-height: 1.2;
+}
+
+.project-descr{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
 }
 .works-grid.hide-titles .work-item > a{
     overflow: hidden;    
