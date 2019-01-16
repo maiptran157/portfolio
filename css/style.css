@@ -3450,6 +3450,12 @@ a.logo:hover{
     color: #aaa;
     line-height: 1.2;
 }
+
+.project-descr{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+}
 .works-grid.hide-titles .work-item > a{
     overflow: hidden;    
     padding: 0;
