@@ -2968,12 +2968,12 @@ a.logo:hover{
     overflow: hidden;
 }
 .team-item-image img{
-    width: 100%;
+    width: 75%;
 }
 .team-item-image:after{
     content: " ";
     display: block;
-    width: 100%;
+    width: 75%;
     height: 100%;
     position: absolute;
     top: 0;
@@ -2991,7 +2991,7 @@ a.logo:hover{
 
 .team-item-detail{
     opacity: 0;
-    width: 100%;
+    width: 75%;
     position: absolute;
     top: 50%;
     left: 0;
@@ -3042,12 +3042,12 @@ a.logo:hover{
     color: #aaa;
 }
 .team-social-links{
+    width: 75%;
     text-align: center;
     margin-top: 5%;
     cursor: pointer;
 }
 .team-social-links a{
-    width: 5vw;
     margin: 1%;
     /* padding: 3px 4.5px; */
     color: rgba(0,0,0, .4);
@@ -3060,14 +3060,41 @@ a.logo:hover{
 }
 
 .team-social-links a i {
-    font-size: 3vh;
+    font-size: 2vh;
     margin-right: 1%;
 }
 
 .team-social-links a span {
-    font-size: 2vh;
+    font-size: 1.5vh;
 }
-
+@media only screen and (max-width: 319px) {
+    .team-social-links a i {
+        font-size: 18px;
+    }
+    .team-social-links a span {
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .team-item-image img{
+        width: 100%;
+    }
+    .team-item-image:after{
+        width: 100%;
+    }
+    .team-item-detail{
+        width: 100%;
+    }
+    .team-social-links{
+        width: 100%;
+    }
+    .team-social-links a i {
+        font-size: 18px;
+    }
+    .team-social-links a span {
+        font-size: 18px;
+    }
+}
 
 /* Hover state */
 .no-mobile .team-item:hover .team-item-image:after{
