@@ -3060,12 +3060,12 @@ a.logo:hover{
 }
 
 .team-social-links a i {
-    font-size: 2vh;
+    font-size: 19px;
     margin-right: 1%;
 }
 
 .team-social-links a span {
-    font-size: 1.5vh;
+    font-size: 12px;
 }
 @media only screen and (max-width: 319px) {
     .team-social-links a i {
