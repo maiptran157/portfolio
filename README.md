@@ -1,2 +1,2 @@
-###### Project title
-Personal portfolio nuilt in Bootstrap, JavaScript, jQuery, and PHPMailer.
+## About this project
+Personal portfolio built using Bootstrap, JavaScript, jQuery, and PHPMailer.
