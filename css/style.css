@@ -4055,7 +4055,7 @@ a.logo:hover{
 }
 .ci-title{
     margin-bottom: 1px;
-    color: #777;    
+    color: rgb(213, 77, 206);    
     font-size: 12px;
     font-weight: 400;
     text-transform: uppercase;
@@ -4214,10 +4214,11 @@ a.logo:hover{
 
 .footer{
     text-align: center;
-    font-size: 12px;   
+    font-size: 12px;
+    background-color: rgb(0, 0, 0);   
 }
 .footer a{
-    color: #888;
+    color: rgb(213, 77, 206);;
     text-decoration: none;
     
     -webkit-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);  
@@ -4235,12 +4236,9 @@ a.logo:hover{
     text-transform: uppercase;
     letter-spacing: 0.5em;
 }
-.footer-made{
-    font-size: 11px;
-    color: #999;
+.footer-logo {
+    color: white;
 }
-
-
 .footer-social-links{
     font-size: 14px;
 }
@@ -4252,7 +4250,7 @@ a.logo:hover{
     margin: 0 6px;
     text-align: center;
     display: inline-block;
-    color: #111;
+    color: white;
     
     -webkit-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);  
     -moz-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000); 
@@ -5748,6 +5746,10 @@ section:hover .small-item-carousel .owl-next{
     flex-flow: column;
     align-items: center;
     justify-items: center;
+}
+
+.tech-icons div {
+    color: rgb(213, 77, 206);
 }
 /* ==============================
    Special demos
