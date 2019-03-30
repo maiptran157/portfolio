@@ -724,7 +724,7 @@ a.btn-mod:focus{
 }
 
 .btn-mod.btn-w{
-    color: #111;
+    color: #3a4964;
     background: rgba(255,255,255, .8);
 }
 .btn-mod.btn-w:hover,
@@ -819,8 +819,9 @@ a.btn-mod:focus{
     width: 100%;
 }
 .btn-mod.btn-w:hover{
-    background: rgb(50, 50, 50);
+    background: rgba(123, 77, 130, 0.9);
     color: white;
+    transition: .3s;
 }
 
 
@@ -1029,7 +1030,7 @@ a.btn-mod:focus{
     overflow: hidden;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center center;
+    /* background-position: center center; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1043,16 +1044,49 @@ a.btn-mod:focus{
     text-align: center;
 }
 
-
 /* Home content */
 
 .home-content{
     position: relative;
 }
-.home-text{
+
+/* Neo text */
+
+.neon-text {
     display: table-cell;
     height: 100%;
     vertical-align: middle;
+    font-size: 7em;
+  }
+  
+.neon-text h1, .neon-text h2  {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    color: #fff;
+    -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+    animation: neon1 1.5s ease-in-out infinite alternate;
+  }
+
+/*glow for webkit*/
+
+@-webkit-keyframes neon1 {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px rgb(213, 77, 206), 0 0 70px rgb(213, 77, 206), 0 0 80px rgb(213, 77, 206), 0 0 100px rgb(213, 77, 206), 0 0 150px rgb(213, 77, 206);
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px rgb(213, 77, 206), 0 0 35px rgb(213, 77, 206), 0 0 40px rgb(213, 77, 206), 0 0 50px rgb(213, 77, 206), 0 0 75px rgb(213, 77, 206);
+    }
+  }
+
+@keyframes neon1 {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px rgb(213, 77, 206), 0 0 70px rgb(213, 77, 206), 0 0 80px rgb(213, 77, 206), 0 0 100px rgb(213, 77, 206), 0 0 150px rgb(213, 77, 206);
+      }
+      to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px rgb(213, 77, 206), 0 0 35px rgb(213, 77, 206), 0 0 40px rgb(213, 77, 206), 0 0 50px rgb(213, 77, 206), 0 0 75px rgb(213, 77, 206);
+      }
 }
 
 /* Scroll down icon */
@@ -1911,7 +1945,7 @@ a.logo:hover{
  */
 
 .main-nav.dark{
-    background-color: rgba(10,10,10, .95);
+    background-color: rgb(0, 0, 0);
     
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -2716,6 +2750,7 @@ a.logo:hover{
     text-align: center;
     letter-spacing: 0.5em;
     line-height: 1.4;
+    color: rgb(213, 77, 206);
 }
 .section-more{
     margin-top: 7px;
@@ -5227,7 +5262,8 @@ section:hover .small-item-carousel .owl-next{
  }
 
  .hobbies-nav .active{
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid;
+    border-color: rgb(213, 77, 206);
  }
 
 .tpl-alt-tabs{
